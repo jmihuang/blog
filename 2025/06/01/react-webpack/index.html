@@ -17,24 +17,26 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>Hexo 建置 - Hexo</title>
+  <title>react-webpack - Hexo</title>
 
   
-    <meta name="description" content="前置條件 安裝 Git 安裝 Node.js（建議使用 LTS 版） 擁有 GitHub 帳號   步驟一：安裝 Hexo1npm install -g hexo-cli   步驟二：建立部落格專案1234mkdir my-blogcd my-bloghexo initnpm install   步驟三：本地啟動部落格1hexo server  瀏覽： http:&#x2F;&#x2F;localhost:4000">
+    <meta name="description" content="React + Webpack 開發環境建立教學github 載點  官方的 npx create-react-app my-app 現已改為使用 Vite + Rollup，不再倚賴 Webpack。不過若你對 Webpack 打包流程更熟悉，仍可手動建立 React 專案。   為什麼使用 Webpack？使用 Webpack 的目的：  安裝 Webpack 並自訂設定檔 使用 Babel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 建置">
-<meta property="og:url" content="http://example.com/2025/05/31/hexo-build/index.html">
+<meta property="og:title" content="react-webpack">
+<meta property="og:url" content="http://example.com/2025/06/01/react-webpack/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前置條件 安裝 Git 安裝 Node.js（建議使用 LTS 版） 擁有 GitHub 帳號   步驟一：安裝 Hexo1npm install -g hexo-cli   步驟二：建立部落格專案1234mkdir my-blogcd my-bloghexo initnpm install   步驟三：本地啟動部落格1hexo server  瀏覽： http:&#x2F;&#x2F;localhost:4000">
+<meta property="og:description" content="React + Webpack 開發環境建立教學github 載點  官方的 npx create-react-app my-app 現已改為使用 Vite + Rollup，不再倚賴 Webpack。不過若你對 Webpack 打包流程更熟悉，仍可手動建立 React 專案。   為什麼使用 Webpack？使用 Webpack 的目的：  安裝 Webpack 並自訂設定檔 使用 Babel">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-05-30T22:55:10.443Z">
-<meta property="article:modified_time" content="2025-06-01T12:28:30.789Z">
+<meta property="article:published_time" content="2025-06-01T12:27:53.000Z">
+<meta property="article:modified_time" content="2025-06-01T12:28:24.400Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="React.js">
+<meta property="article:tag" content="Webpack">
 <meta name="twitter:card" content="summary">
   
   
   
-  
+  <meta name="keywords" content="React.js,Webpack">
 
   <!-- feed -->
   
@@ -76,114 +78,65 @@
 <div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/blog/blog/">Home</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/blog/">Blog</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-05-30T22:55:10.443Z">2025-05-31</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-06-01T12:28:30.789Z">2025-06-01</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" href="/blog/">Blog</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93/">前端技術</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-06-01T12:27:53.000Z">2025-06-01</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-06-01T12:28:24.400Z">2025-06-01</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>Hexo 建置</span></h1>
+        <h1 class="text title"><span>react-webpack</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="前置條件"><a href="#前置條件" class="headerlink" title="前置條件"></a>前置條件</h1><ol>
-<li>安裝 Git</li>
-<li>安裝 Node.js（建議使用 LTS 版）</li>
-<li>擁有 GitHub 帳號</li>
+  </div><article class="md-text content"><h1 id="React-Webpack-開發環境建立教學"><a href="#React-Webpack-開發環境建立教學" class="headerlink" title="React + Webpack 開發環境建立教學"></a>React + Webpack 開發環境建立教學</h1><p><a href="https://github.com/jmihuang/react-with-webpack.git" target="_blank" rel="noopener">github 載點</a></p>
+<blockquote>
+<p>官方的 <code>npx create-react-app my-app</code> 現已改為使用 <strong>Vite + Rollup</strong>，不再倚賴 Webpack。<br>不過若你對 Webpack 打包流程更熟悉，仍可手動建立 React 專案。</p>
+</blockquote>
+<hr>
+<h2 id="為什麼使用-Webpack？"><a href="#為什麼使用-Webpack？" class="headerlink" title="為什麼使用 Webpack？"></a>為什麼使用 Webpack？</h2><p>使用 Webpack 的目的：</p>
+<ol>
+<li>安裝 Webpack 並自訂設定檔</li>
+<li>使用 Babel 編譯 React 的 JSX 語法</li>
+<li>打包 JS、HTML、CSS 等檔案</li>
+<li>利用 dev server 啟用 hot reload</li>
 </ol>
 <hr>
-<h1 id="步驟一：安裝-Hexo"><a href="#步驟一：安裝-Hexo" class="headerlink" title="步驟一：安裝 Hexo"></a>步驟一：安裝 Hexo</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="建立-React-Webpack-專案"><a href="#建立-React-Webpack-專案" class="headerlink" title="建立 React + Webpack 專案"></a>建立 React + Webpack 專案</h2><h3 id="1-初始化專案"><a href="#1-初始化專案" class="headerlink" title="1. 初始化專案"></a>1. 初始化專案</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> react_with_webpack</span><br><span class="line"><span class="built_in">cd</span> react_with_webpack</span><br><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>-y</code> 可快速產生預設的 <code>package.json</code>。</p>
+<hr>
+<h3 id="2-安裝-Webpack-與開發用套件"><a href="#2-安裝-Webpack-與開發用套件" class="headerlink" title="2. 安裝 Webpack 與開發用套件"></a>2. 安裝 Webpack 與開發用套件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack webpack-cli webpack-dev-server</span><br></pre></td></tr></table></figure>
+
+<p>安裝後 <code>package.json</code> 會出現：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;webpack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.x.x&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;webpack-cli&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^x.x.x&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;webpack-dev-server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^x.x.x&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>「^」代表安裝相容的最新版，但實務上會用固定版本避免相容問題，版本會鎖在 <code>package-lock.json</code>。</p>
+</blockquote>
+<hr>
+<h3 id="3-安裝-Babel-HTML-套件"><a href="#3-安裝-Babel-HTML-套件" class="headerlink" title="3. 安裝 Babel + HTML 套件"></a>3. 安裝 Babel + HTML 套件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react</span><br><span class="line">npm install --save-dev html-webpack-plugin</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="步驟二：建立部落格專案"><a href="#步驟二：建立部落格專案" class="headerlink" title="步驟二：建立部落格專案"></a>步驟二：建立部落格專案</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h3 id="4-建立-Webpack-設定檔-webpack-config-js"><a href="#4-建立-Webpack-設定檔-webpack-config-js" class="headerlink" title="4. 建立 Webpack 設定檔 webpack.config.js"></a>4. 建立 Webpack 設定檔 <code>webpack.config.js</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">HtmlWebpackPlugin</span> = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&quot;./src/index.jsx&quot;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&quot;dist&quot;</span>),</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">    <span class="attr">clean</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.(js|jsx)$/</span>,</span><br><span class="line">        <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span>,</span><br><span class="line">        <span class="attr">use</span>: &#123;</span><br><span class="line">          <span class="attr">loader</span>: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">resolve</span>: &#123;</span><br><span class="line">    <span class="attr">extensions</span>: [<span class="string">&quot;.js&quot;</span>, <span class="string">&quot;.jsx&quot;</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">HtmlWebpackPlugin</span>(&#123;</span><br><span class="line">      <span class="attr">template</span>: <span class="string">&quot;./public/index.html&quot;</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">static</span>: &#123;</span><br><span class="line">      <span class="attr">directory</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&quot;dist&quot;</span>),</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">compress</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">3000</span>,</span><br><span class="line">    <span class="attr">hot</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="步驟三：本地啟動部落格"><a href="#步驟三：本地啟動部落格" class="headerlink" title="步驟三：本地啟動部落格"></a>步驟三：本地啟動部落格</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>瀏覽： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a></p>
-<hr>
-<h1 id="步驟四：新增文章"><a href="#步驟四：新增文章" class="headerlink" title="步驟四：新增文章"></a>步驟四：新增文章</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;hello-world&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>會產生 <code>hello-world.md</code>，你可以這樣撰寫內容：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="attr">title</span>: 如何使用 <span class="title class_">Next</span>.<span class="property">js</span> 建立網站</span><br><span class="line"><span class="attr">date</span>: <span class="number">2024</span>-<span class="number">05</span>-<span class="number">01</span></span><br><span class="line"><span class="attr">tags</span>:</span><br><span class="line">  - <span class="title class_">Next</span>.<span class="property">js</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="5-建立-Babel-設定檔-babelrc"><a href="#5-建立-Babel-設定檔-babelrc" class="headerlink" title="5. 建立 Babel 設定檔 .babelrc"></a>5. 建立 Babel 設定檔 <code>.babelrc</code></h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;presets&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;@babel/preset-env&quot;</span><span class="punctuation">,</span> <span class="string">&quot;@babel/preset-react&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="步驟五：部署到-GitHub-Pages"><a href="#步驟五：部署到-GitHub-Pages" class="headerlink" title="步驟五：部署到 GitHub Pages"></a>步驟五：部署到 GitHub Pages</h1><ol>
-<li><p>安裝部署插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>設定 <code>_config.yml</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;你的帳號&gt;/&lt;repo&gt;.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>建立 GitHub repo</p>
-</li>
-</ol>
-<hr>
-<h1 id="步驟六：部署部落格"><a href="#步驟六：部署部落格" class="headerlink" title="步驟六：部署部落格"></a>步驟六：部署部落格</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="6-加入啟動指令到-package-json"><a href="#6-加入啟動指令到-package-json" class="headerlink" title="6. 加入啟動指令到 package.json"></a>6. 加入啟動指令到 <code>package.json</code></h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack serve --open --mode development&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack --mode production&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="步驟七：查看部落格網址"><a href="#步驟七：查看部落格網址" class="headerlink" title="步驟七：查看部落格網址"></a>步驟七：查看部落格網址</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://&lt;你的帳號&gt;.github.io/&lt;repo&gt;/</span><br></pre></td></tr></table></figure>
+<h2 id="專案目錄結構"><a href="#專案目錄結構" class="headerlink" title="專案目錄結構"></a>專案目錄結構</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">react_with_webpack/</span><br><span class="line">├── public/</span><br><span class="line">│   └── index.html</span><br><span class="line">├── src/</span><br><span class="line">│   └── index.jsx</span><br><span class="line">├── .babelrc</span><br><span class="line">├── package.json</span><br><span class="line">├── webpack.config.js</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="進階設定"><a href="#進階設定" class="headerlink" title="進階設定"></a>進階設定</h1><h2 id="更換主題（Themes）"><a href="#更換主題（Themes）" class="headerlink" title="更換主題（Themes）"></a>更換主題（Themes）</h2><ol>
-<li>前往 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo Themes 官網</a> 瀏覽主題</li>
-<li>下載主題放入 <code>themes</code> 資料夾</li>
-<li>修改 <code>_config.yml</code> 裡的 <code>theme</code> 參數</li>
-<li>推薦主題：<code>NexT</code>、<code>Icarus</code> 等</li>
-</ol>
-<hr>
-<h2 id="安裝插件（搜尋、分類、留言）"><a href="#安裝插件（搜尋、分類、留言）" class="headerlink" title="安裝插件（搜尋、分類、留言）"></a>安裝插件（搜尋、分類、留言）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save &lt;插件名稱&gt;</span><br></pre></td></tr></table></figure>
-
-<p>推薦插件：</p>
-<ul>
-<li><code>hexo-generator-search</code>（本地搜尋）</li>
-<li><code>hexo-generator-category</code>（文章分類）</li>
-<li><code>hexo-disqus</code>（Disqus 留言系統）</li>
-</ul>
-<hr>
-<h2 id="自訂頁面（About、Tags）"><a href="#自訂頁面（About、Tags）" class="headerlink" title="自訂頁面（About、Tags）"></a>自訂頁面（About、Tags）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;about&quot;</span></span><br><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>編輯以下檔案：</p>
-<ul>
-<li><code>source/about/index.md</code></li>
-<li><code>source/tags/index.md</code></li>
-</ul>
-<hr>
-<h2 id="綁定自訂網域（選擇性）"><a href="#綁定自訂網域（選擇性）" class="headerlink" title="綁定自訂網域（選擇性）"></a>綁定自訂網域（選擇性）</h2><ol>
-<li>購買網域（例如 <a target="_blank" rel="noopener" href="https://www.namecheap.com/">Namecheap</a>）</li>
-<li>在 GitHub Pages 根目錄加入 <code>CNAME</code> 檔案，內容為你的網域</li>
-<li>設定 DNS 指向 GitHub Pages 的 IP</li>
-</ol>
-<hr>
-<h2 id="Deploy-Local-的-root-分別設定"><a href="#Deploy-Local-的-root-分別設定" class="headerlink" title="Deploy &amp; Local 的 root 分別設定"></a>Deploy &amp; Local 的 root 分別設定</h2><ul>
-<li>開發時使用  <code>root: /</code>（本地  <code>localhost:4000</code>  正常）</li>
-<li>部署時使用  <code>root: /blog/</code>（GitHub Pages 下正常）</li>
-<li>希望<strong>不用每次手動改  <code>_config.yml</code></strong>，而是有兩個獨立的 config</li>
-</ul>
-<p>使用  <code>--config</code>  指定設定檔：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_config.<span class="property">yml</span>           ← 給本地開發用（<span class="attr">root</span>: /）</span><br><span class="line">_config.<span class="property">deploy</span>.<span class="property">yml</span>    ← 給部署用（<span class="attr">root</span>: <span class="regexp">/blog/</span>）</span><br></pre></td></tr></table></figure>
-
-<p>建立 <code>_config.deploy.yml</code>，內容例如：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">root</span>: <span class="regexp">/blog/</span>;</span><br></pre></td></tr></table></figure>
-
-<p>部署時加上：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate --config _config.yml,_config.deploy.yml</span><br><span class="line">hexo deploy --config _config.yml,_config.deploy.yml</span><br></pre></td></tr></table></figure>
+<h2 id="HTML-範本-public-index-html"><a href="#HTML-範本-public-index-html" class="headerlink" title="HTML 範本 public/index.html"></a>HTML 範本 <code>public/index.html</code></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>React App<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ✅ React 掛載點 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="用-npm-script-分流"><a href="#用-npm-script-分流" class="headerlink" title="用 npm script 分流"></a>用 npm script 分流</h3><p>在 <code>package.json</code> 中加入：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean &amp;&amp; hexo s&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean &amp;&amp; hexo g --config _config.yml,_config.deploy.yml &amp;&amp; hexo d --config _config.yml,_config.deploy.yml&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="React-程式碼-src-index-jsx"><a href="#React-程式碼-src-index-jsx" class="headerlink" title="React 程式碼 src/index.jsx"></a>React 程式碼 <code>src/index.jsx</code></h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createRoot &#125; <span class="keyword">from</span> <span class="string">&quot;react-dom/client&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello React with Webpack!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
 
-<p>使用方式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run dev     <span class="comment"># 本地預覽，不加 root</span></span><br><span class="line">npm run deploy  <span class="comment"># 上傳 GitHub，套用 root: /blog/</span></span><br></pre></td></tr></table></figure>
-
-<p>常用的指令</p>
-<p>撰寫內容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章標題&quot;</span>       <span class="comment"># 建立新文章</span></span><br><span class="line">hexo new page <span class="string">&quot;about&quot;</span>    <span class="comment"># 建立新頁面（如 About、Tags 等）</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d   <span class="comment"># 一次清除 → 產生 → 部署</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>每次新增&#x2F;修改內容後部署建議順序：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>參考文章：<a target="_blank" rel="noopener" href="https://driedfishlin.medium.com/%E6%89%8B%E6%8A%8A%E6%89%8B%E5%B8%B6%E4%BD%A0%E6%90%9E%E6%87%82%E5%A6%82%E4%BD%95%E7%94%A8-webpack-%E5%BB%BA%E7%BD%AE-react-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83-9ada14ccb2eb">手把手帶你搞懂如何用 Webpack 建置 React 開發環境</a></p>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -193,7 +146,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/blog/2025/05/31/React-with-webpack/">React+Webpack開發環境建立</a></div><div class="item" id="next"></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/blog/2025/05/31/React-with-webpack/">React+Webpack開發環境建立</a></div></section></div>
 
 
 
@@ -207,7 +160,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E6%A2%9D%E4%BB%B6"><span class="toc-text">前置條件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%9D-Hexo"><span class="toc-text">步驟一：安裝 Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E4%BA%8C%EF%BC%9A%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC%E5%B0%88%E6%A1%88"><span class="toc-text">步驟二：建立部落格專案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E4%B8%89%EF%BC%9A%E6%9C%AC%E5%9C%B0%E5%95%9F%E5%8B%95%E9%83%A8%E8%90%BD%E6%A0%BC"><span class="toc-text">步驟三：本地啟動部落格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E5%9B%9B%EF%BC%9A%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0"><span class="toc-text">步驟四：新增文章</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E4%BA%94%EF%BC%9A%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages"><span class="toc-text">步驟五：部署到 GitHub Pages</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E5%85%AD%EF%BC%9A%E9%83%A8%E7%BD%B2%E9%83%A8%E8%90%BD%E6%A0%BC"><span class="toc-text">步驟六：部署部落格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%A9%9F%E4%B8%83%EF%BC%9A%E6%9F%A5%E7%9C%8B%E9%83%A8%E8%90%BD%E6%A0%BC%E7%B6%B2%E5%9D%80"><span class="toc-text">步驟七：查看部落格網址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E8%A8%AD%E5%AE%9A"><span class="toc-text">進階設定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%8F%9B%E4%B8%BB%E9%A1%8C%EF%BC%88Themes%EF%BC%89"><span class="toc-text">更換主題（Themes）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D%E6%8F%92%E4%BB%B6%EF%BC%88%E6%90%9C%E5%B0%8B%E3%80%81%E5%88%86%E9%A1%9E%E3%80%81%E7%95%99%E8%A8%80%EF%BC%89"><span class="toc-text">安裝插件（搜尋、分類、留言）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E8%A8%82%E9%A0%81%E9%9D%A2%EF%BC%88About%E3%80%81Tags%EF%BC%89"><span class="toc-text">自訂頁面（About、Tags）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B6%81%E5%AE%9A%E8%87%AA%E8%A8%82%E7%B6%B2%E5%9F%9F%EF%BC%88%E9%81%B8%E6%93%87%E6%80%A7%EF%BC%89"><span class="toc-text">綁定自訂網域（選擇性）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deploy-Local-%E7%9A%84-root-%E5%88%86%E5%88%A5%E8%A8%AD%E5%AE%9A"><span class="toc-text">Deploy &amp; Local 的 root 分別設定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-npm-script-%E5%88%86%E6%B5%81"><span class="toc-text">用 npm script 分流</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-Webpack-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E5%BB%BA%E7%AB%8B%E6%95%99%E5%AD%B8"><span class="toc-text">React + Webpack 開發環境建立教學</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E4%BD%BF%E7%94%A8-Webpack%EF%BC%9F"><span class="toc-text">為什麼使用 Webpack？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-React-Webpack-%E5%B0%88%E6%A1%88"><span class="toc-text">建立 React + Webpack 專案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B0%88%E6%A1%88"><span class="toc-text">1. 初始化專案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%9D-Webpack-%E8%88%87%E9%96%8B%E7%99%BC%E7%94%A8%E5%A5%97%E4%BB%B6"><span class="toc-text">2. 安裝 Webpack 與開發用套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%9D-Babel-HTML-%E5%A5%97%E4%BB%B6"><span class="toc-text">3. 安裝 Babel + HTML 套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%BB%BA%E7%AB%8B-Webpack-%E8%A8%AD%E5%AE%9A%E6%AA%94-webpack-config-js"><span class="toc-text">4. 建立 Webpack 設定檔 webpack.config.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%BB%BA%E7%AB%8B-Babel-%E8%A8%AD%E5%AE%9A%E6%AA%94-babelrc"><span class="toc-text">5. 建立 Babel 設定檔 .babelrc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8A%A0%E5%85%A5%E5%95%9F%E5%8B%95%E6%8C%87%E4%BB%A4%E5%88%B0-package-json"><span class="toc-text">6. 加入啟動指令到 package.json</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B"><span class="toc-text">專案目錄結構</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-%E7%AF%84%E6%9C%AC-public-index-html"><span class="toc-text">HTML 範本 public&#x2F;index.html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%E7%A8%8B%E5%BC%8F%E7%A2%BC-src-index-jsx"><span class="toc-text">React 程式碼 src&#x2F;index.jsx</span></a></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>Scroll to Top</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
