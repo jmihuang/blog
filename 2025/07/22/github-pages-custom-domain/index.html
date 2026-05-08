@@ -28,7 +28,7 @@
 <meta property="og:description" content="在 Github pages 自有網域的網頁（僅限靜態網站）步驟一：repo 檔案根目錄需檔案需有 CNAME，內容為網域名稱12&#x2F;&#x2F;CNAME filewww.snewup.com  步驟一：先在 repo 建立 gh-pages 分支123456git initgit checkout --orphan gh-pagesgit remote add origin [github repo pr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-07-22T02:45:15.000Z">
-<meta property="article:modified_time" content="2025-07-22T04:44:03.313Z">
+<meta property="article:modified_time" content="2025-11-10T00:45:57.873Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
@@ -65,7 +65,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/blog/2025/05/31/hexo-build/"><span class="title">Hexo 建置</span></a><a class="item title" href="/blog/2025/06/04/react-tailwind-RCA/"><span class="title">react 安裝 tailwind (via Create React App/ Vite)</span></a><a class="item title" href="/blog/2025/06/04/react-tailwind-webpack/"><span class="title">react 安裝 tailwind (via webpack)</span></a><a class="item title" href="/blog/2025/06/01/react-route/"><span class="title">react-route</span></a><a class="item title" href="/blog/2025/07/22/github-pages-custom-domain/"><span class="title">Github pages 自有網域網頁</span></a><a class="item title" href="/blog/2025/06/03/Next.js%E5%89%8D%E8%A8%80/"><span class="title">Next.js 序</span></a><a class="item title" href="/blog/2025/06/04/react-icons/"><span class="title">react-icons</span></a><a class="item title" href="/blog/2025/05/31/React-with-webpack/"><span class="title">React+Webpack開發環境建立</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/blog/2025/07/22/github-pages-custom-domain/"><span class="title">Github pages 自有網域網頁</span></a><a class="item title" href="/blog/2025/05/31/hexo-build/"><span class="title">Hexo 建置</span></a><a class="item title" href="/blog/2025/06/04/react-tailwind-RCA/"><span class="title">react 安裝 tailwind (via Create React App/ Vite)</span></a><a class="item title" href="/blog/2025/06/04/react-tailwind-webpack/"><span class="title">react 安裝 tailwind (via webpack)</span></a><a class="item title" href="/blog/2025/06/01/react-route/"><span class="title">react-route</span></a><a class="item title" href="/blog/2025/06/03/Next.js%E5%89%8D%E8%A8%80/"><span class="title">Next.js 序</span></a><a class="item title" href="/blog/2025/06/04/react-icons/"><span class="title">react-icons</span></a><a class="item title" href="/blog/2025/05/31/React-with-webpack/"><span class="title">React+Webpack開發環境建立</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/blog/blog/">Home</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/blog/">Blog</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-07-22T02:45:15.000Z">2025-07-22</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-07-22T04:44:03.313Z">2025-07-22</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-07-22T02:45:15.000Z">2025-07-22</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-11-10T00:45:57.873Z">2025-11-10</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -92,6 +92,9 @@
   </div><article class="md-text content"><h1 id="在-Github-pages-自有網域的網頁（僅限靜態網站）"><a href="#在-Github-pages-自有網域的網頁（僅限靜態網站）" class="headerlink" title="在 Github pages 自有網域的網頁（僅限靜態網站）"></a>在 Github pages 自有網域的網頁（僅限靜態網站）</h1><h2 id="步驟一：repo-檔案根目錄需檔案需有-CNAME，內容為網域名稱"><a href="#步驟一：repo-檔案根目錄需檔案需有-CNAME，內容為網域名稱" class="headerlink" title="步驟一：repo 檔案根目錄需檔案需有 CNAME，內容為網域名稱"></a>步驟一：repo 檔案根目錄需檔案需有 CNAME，內容為網域名稱</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//CNAME file</span><br><span class="line">www.snewup.com</span><br></pre></td></tr></table></figure>
 
 <h2 id="步驟一：先在-repo-建立-gh-pages-分支"><a href="#步驟一：先在-repo-建立-gh-pages-分支" class="headerlink" title="步驟一：先在 repo 建立 gh-pages 分支"></a>步驟一：先在 repo 建立 gh-pages 分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git checkout --orphan gh-pages</span><br><span class="line">git remote add origin [github repo project]</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first website&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>…or push an existing repository from the command line</p>
+<figure class="highlight plaintext"><figcaption><span>remote add origin [github repo project]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
 
 <h2 id="步驟二：domain-設定-cloudflare-DNS-settings"><a href="#步驟二：domain-設定-cloudflare-DNS-settings" class="headerlink" title="步驟二：domain 設定 cloudflare DNS settings"></a>步驟二：domain 設定 cloudflare DNS settings</h2><p>使用 cloudflare 安全網域設定，<br>必須先從 domain 註冊網站設定 cloudflare NS(cloudflare 申請新增網域時會同時提供)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">anuj.ns.cloudflare.com</span><br><span class="line">diva.ns.cloudflare.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -140,7 +143,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/blog/2025/06/04/react-tailwind-webpack/">react 安裝 tailwind (via webpack)</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/blog/2025/06/04/react-tailwind-RCA/">react 安裝 tailwind (via Create React App/ Vite)</a></div></section></div>
 
 
 
